@@ -1,9 +1,9 @@
 sitemap-xml-generator
 =====================
 
-<p>Modulo para Magento para gerar XML facilmente para canais de marketing.</p>
+<p>Modulo para Magento gerar XML facilmente em canais de marketing.</p>
 
-<p>Sem a necessidade de conhecimento de código ou programação. Apenas com usos de variáveis o módulo faz cálculos, concatena e criar tags. </p>
+<p>Sem a necessidade de conhecimento de código ou programação. Você usa apenas variáveis e o módulo faz cálculos, concatena e criar tags. </p>
 
 <p>Usando sempre esse formato: {{codigo_atributo}}</p>
 
@@ -33,6 +33,7 @@ Tag: "valor_promocional"<br>
 Value: "{{price}}/2"<br>
 </p>
 
+<p>Com ele você poderá gerar XML para Buscapé, Shopping UOL, Zoom, Jacotei e muito mais. Qualquer ferramenta ou sistema que use XML poderá ser facilmente gerenciado por esse módulo.</p>
 
 Desenvolvedores do Projeto
 ========================

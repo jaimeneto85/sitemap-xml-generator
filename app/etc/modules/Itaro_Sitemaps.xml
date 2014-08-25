@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Itaro_Sitemaps>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Itaro_Sitemaps>
+    </modules>
+</config> 

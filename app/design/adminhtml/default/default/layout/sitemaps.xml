@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <adminhtml_sitemaps_new>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <file>css/sitemaps/jquery-ui.css</file>
+            </action>
+            <action method="addJs"><script>sitemaps/sitemaps.js</script></action>
+            <action method="addJs"><script>sitemaps/jquery-ui.js</script></action>
+        </reference>
+    </adminhtml_sitemaps_new>
+    <adminhtml_sitemaps_edit>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <file>css/sitemaps/jquery-ui.css</file>
+            </action>
+            <action method="addJs"><script>sitemaps/sitemaps.js</script></action>
+            <action method="addJs"><script>sitemaps/jquery-ui.js</script></action>
+        </reference>
+    </adminhtml_sitemaps_edit>
+    <adminhtml_sitemaps_index>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <file>css/sitemaps/jquery-ui.css</file>
+            </action>
+            <action method="addJs"><script>sitemaps/sitemaps.js</script></action>
+            <action method="addJs"><script>sitemaps/jquery-ui.js</script></action>
+        </reference>
+    </adminhtml_sitemaps_index>
+</layout>
