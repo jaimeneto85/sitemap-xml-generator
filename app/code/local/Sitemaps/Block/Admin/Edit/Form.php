@@ -59,7 +59,7 @@ class Itaro_Sitemaps_Block_Admin_Edit_Form extends Mage_Adminhtml_Block_Widget_F
             'title'     => Mage::helper('sitemaps')->__('Filename'),
             'label'     => Mage::helper('sitemaps')->__('Filename'),
             'maxlength' => '250',
-            'note'      => Mage::helper('adminhtml')->__('exemplo: parceiro.xml'),
+            'note'      => Mage::helper('adminhtml')->__('exemplo: sitemap.xml'),
             'required'  => true,
             'value' => $data['filename']
         ));
@@ -69,7 +69,7 @@ class Itaro_Sitemaps_Block_Admin_Edit_Form extends Mage_Adminhtml_Block_Widget_F
             'title'     => Mage::helper('sitemaps')->__('Path'),
             'label'     => Mage::helper('sitemaps')->__('Path'),
             'maxlength' => '250',
-            'note'      => Mage::helper('adminhtml')->__('exemplo: xml/'),
+            'note'      => Mage::helper('adminhtml')->__('exemplo: sitemap/'),
             'required'  => true,
             'value' => $data['path']
         ));                     

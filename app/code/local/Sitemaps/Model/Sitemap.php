@@ -1,11 +1,4 @@
 <?php
-/*
-* Itaro Sitemaps XML Generator
-* Desenvolvido por @jaimeneto85 + @wellbishopt
-* Projeto @jaimeneto85
-*
-* Versao 0.1
-*/
 class Itaro_Sitemaps_Model_Sitemap extends Mage_Core_Model_Abstract
 {
     protected function _construct()

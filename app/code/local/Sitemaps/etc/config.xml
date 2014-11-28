@@ -29,7 +29,7 @@
             <catalog translate="title" module="sitemaps">
                 <children>
                     <itaro_sitemaps>
-                        <title>Sitemaps XML Generator</title>
+                        <title>Itaro Sitemaps</title>
                         <sort_order>999</sort_order>
                         <action>adminhtml/sitemaps/index</action>
                     </itaro_sitemaps>
@@ -46,7 +46,7 @@
                         <catalog>
                             <children>
                                 <itaro_sitemaps translate="title" module="sitemaps">
-                                    <title>Sitemaps XML Generator</title>
+                                    <title>Itaro Sitemaps</title>
                                 </itaro_sitemaps>      
                             </children>
                         </catalog>
@@ -136,7 +136,7 @@
         <jobs>
             <sitemaps>
                 <schedule>
-                    <cron_expr>0 6 * * *</cron_expr>
+                    <cron_expr>0 4 * * *</cron_expr>
                 </schedule>
                 <run>
                     <model>sitemaps/sitemap::updateall</model>
