@@ -1,6 +1,6 @@
 <?php
 
-class Itaro_Sitemaps_Block_Admin_Edit extends Mage_Adminhtml_Block_Widget_Form_Container
+class Sitemaps_Block_Admin_Edit extends Mage_Adminhtml_Block_Widget_Form_Container
 {
     public function __construct()
     {

@@ -1,5 +1,5 @@
 <?php
-class Itaro_Sitemaps_SitemapsController extends Mage_Adminhtml_Controller_Action
+class Sitemaps_SitemapsController extends Mage_Adminhtml_Controller_Action
 {
     public function indexAction()
     {

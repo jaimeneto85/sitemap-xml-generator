@@ -1,5 +1,5 @@
 <?php
-class Itaro_Sitemaps_Block_Admin_Main_Grid extends Mage_Adminhtml_Block_Widget_Grid
+class Sitemaps_Block_Admin_Main_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
  
     public function __construct()
@@ -16,7 +16,7 @@ class Itaro_Sitemaps_Block_Admin_Main_Grid extends Mage_Adminhtml_Block_Widget_G
     {
         $model      = Mage::getModel('sitemaps/sitemap');
         $collection = $model->getCollection();
-        $collection->getSelect()->joinLeft(array('types' => 'itaro_sitemap_types'), 'types.type_id = main_table.type', array('types.name'));
+        $collection->getSelect()->joinLeft(array('types' => 'sitemap_types'), 'types.type_id = main_table.type', array('types.name'));
 
         $this->setCollection($collection);
  

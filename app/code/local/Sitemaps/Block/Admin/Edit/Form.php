@@ -1,5 +1,5 @@
 <?php
-class Itaro_Sitemaps_Block_Admin_Edit_Form extends Mage_Adminhtml_Block_Widget_Form 
+class Sitemaps_Block_Admin_Edit_Form extends Mage_Adminhtml_Block_Widget_Form 
 {
     protected function _prepareForm() {
         $store_array = array("" => $this->__("Choose an option"));

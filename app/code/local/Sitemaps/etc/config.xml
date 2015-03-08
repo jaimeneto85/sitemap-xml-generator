@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Itaro_Sitemaps>
-            <version>0.1.0</version>
-        </Itaro_Sitemaps>
+        <Sitemaps>
+            <version>0.2.0</version>
+        </Sitemaps>
     </modules>
     <admin>
         <routers>
@@ -11,7 +11,7 @@
                 <use>admin</use>
                 <args>
                     <modules>
-                        <Itaro_Sitemaps before="Mage_Adminhtml">Itaro_Sitemaps</Itaro_Sitemaps>
+                        <Sitemaps before="Mage_Adminhtml">Sitemaps</Sitemaps>
                     </modules>
                 </args>
             </adminhtml>
@@ -28,11 +28,11 @@
         <menu>
             <catalog translate="title" module="sitemaps">
                 <children>
-                    <itaro_sitemaps>
-                        <title>Itaro Sitemaps</title>
+                    <sitemaps>
+                        <title>Sitemaps</title>
                         <sort_order>999</sort_order>
                         <action>adminhtml/sitemaps/index</action>
-                    </itaro_sitemaps>
+                    </sitemaps>
                 </children>
             </catalog>
         </menu>
@@ -45,9 +45,9 @@
                     <children> 
                         <catalog>
                             <children>
-                                <itaro_sitemaps translate="title" module="sitemaps">
-                                    <title>Itaro Sitemaps</title>
-                                </itaro_sitemaps>      
+                                <sitemaps translate="title" module="sitemaps">
+                                    <title>Sitemaps</title>
+                                </sitemaps>      
                             </children>
                         </catalog>
                     </children>
@@ -60,7 +60,7 @@
             <sitemaps>
                 <use>standard</use>
                 <args>
-                    <module>Itaro_Sitemaps</module>
+                    <module>Sitemaps</module>
                     <frontName>sitemaps</frontName>
                 </args>
             </sitemaps>
@@ -74,28 +74,28 @@
         </layout>
         <translate>
             <modules>
-                <Itaro_Sitemaps>
+                <Sitemaps>
                      <files>
-                          <default>Itaro_Sitemaps.csv</default>
+                          <default>Sitemaps.csv</default>
                      </files>
-                </Itaro_Sitemaps>
+                </Sitemaps>
             </modules>
         </translate>
     </frontend>
     <global>
         <models>
             <sitemaps>
-                <class>Itaro_Sitemaps_Model</class>
+                <class>Sitemaps_Model</class>
                 <resourceModel>sitemaps_resource</resourceModel>
             </sitemaps>
             <sitemaps_resource>
-                <class>Itaro_Sitemaps_Model_Resource</class>
+                <class>Sitemaps_Model_Resource</class>
                 <entities>
                     <sitemap>
-                        <table>itaro_sitemaps</table>
+                        <table>sitemaps</table>
                     </sitemap>
                     <type>
-                        <table>itaro_sitemap_types</table>
+                        <table>sitemap_types</table>
                     </type>
                 </entities>
             </sitemaps_resource>
@@ -103,7 +103,7 @@
         <resources>
             <sitemaps_setup>
                 <setup>
-                    <module>Itaro_Sitemaps</module>
+                    <module>Sitemaps</module>
                 </setup>
                 <connection>
                     <use>core_setup</use>
@@ -122,12 +122,12 @@
         </resources>
         <blocks>
             <sitemaps>
-                <class>Itaro_Sitemaps_Block</class>
+                <class>Sitemaps_Block</class>
             </sitemaps>
         </blocks>
         <helpers>
             <sitemaps>
-                <class>Itaro_Sitemaps_Helper</class>
+                <class>Sitemaps_Helper</class>
             </sitemaps>
         </helpers>
     </global>
