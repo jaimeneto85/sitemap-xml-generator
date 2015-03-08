@@ -6,7 +6,7 @@ class Sitemaps_Block_Admin_Main extends Mage_Adminhtml_Block_Widget_Grid_Contain
     {
         parent::__construct();
         
-        $this->_headerText = Mage::helper('sitemaps')->__('Itaro Sitemaps');
+        $this->_headerText = Mage::helper('sitemaps')->__('Sitemaps - XML generator');
         
         $this->_blockGroup = 'sitemaps';
         
