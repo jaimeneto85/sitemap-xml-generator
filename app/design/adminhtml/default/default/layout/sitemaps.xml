@@ -7,6 +7,7 @@
                 <type>skin_css</type>
                 <file>css/sitemaps/jquery-ui.css</file>
             </action>
+            <action method="addJs"><script>sitemaps/jquery.js</script></action>
             <action method="addJs"><script>sitemaps/sitemaps.js</script></action>
             <action method="addJs"><script>sitemaps/jquery-ui.js</script></action>
         </reference>
@@ -17,6 +18,7 @@
                 <type>skin_css</type>
                 <file>css/sitemaps/jquery-ui.css</file>
             </action>
+            <action method="addJs"><script>sitemaps/jquery.js</script></action>
             <action method="addJs"><script>sitemaps/sitemaps.js</script></action>
             <action method="addJs"><script>sitemaps/jquery-ui.js</script></action>
         </reference>
@@ -27,6 +29,7 @@
                 <type>skin_css</type>
                 <file>css/sitemaps/jquery-ui.css</file>
             </action>
+            <action method="addJs"><script>sitemaps/jquery.js</script></action>
             <action method="addJs"><script>sitemaps/sitemaps.js</script></action>
             <action method="addJs"><script>sitemaps/jquery-ui.js</script></action>
         </reference>
