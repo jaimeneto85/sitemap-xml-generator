@@ -110,7 +110,6 @@ class Sitemaps_Model_Sitemap extends Mage_Core_Model_Abstract
             }
 
             $xml .= sprintf("\n\t</%s>", $producTag);
-
             $io->streamWrite($xml);     
             $xml = "";
         }
@@ -200,7 +199,8 @@ class Sitemaps_Model_Sitemap extends Mage_Core_Model_Abstract
             else
             {
                 $attribute = self::extractAttribute($fieldValue);
-                $value = self::getAttributeValue($attribute, $product);
+                $value = self::getAttributeValue($attribute, $product);           
+                $value = self::applyFunction($attribute, $fieldValue, $value);
             }
         }
         else
@@ -216,6 +216,16 @@ class Sitemaps_Model_Sitemap extends Mage_Core_Model_Abstract
         return (string) $value;
     }
 
+    private static function applyFunction($attribute, $fieldValue, $value)
+    {
+        $function = str_replace("({{".$attribute."}})", "", $fieldValue);
+        
+        if($function)
+            eval("\$value = {$function}('{$value}');");
+            
+        return $value;
+    }
+    
     private static function needConcat($value)
     {
         if(preg_match('/[a-zA-Z0-9]+(\$)?\{{2}\w*\}{2}(\$)?[a-zA-Z0-9]+/', $value) && !self::isExpression($value))
@@ -278,6 +288,8 @@ class Sitemaps_Model_Sitemap extends Mage_Core_Model_Abstract
     private static function isExpression($string)
     {
         if(
+            preg_match('/\{{2}\w*\}{2}\)[\+||\-||\*||\/]?/', $string) ||
+            preg_match('/\{{2}\w*\}{2}[\+||\-||\*||\/]\d+(\.\d+)?/', $string) ||
             preg_match('/\{{2}\w*\}{2}[\+||\-||\*||\/]\d+(\.\d+)?/', $string) ||
             preg_match('/\d+(\.\d+)?[\+||\-||\*||\/]\{{2}\w*\}{2}/', $string) ||
             preg_match('/(\d+(\.\d+)?[\+||\-||\*||\/])?\{{2}\w*\}{2}[\+||\-||\*||\/]\{{2}\w*\}{2}([\+||\-||\*||\/]\d+(\.\d+)?)?/', $string)
@@ -294,10 +306,11 @@ class Sitemaps_Model_Sitemap extends Mage_Core_Model_Abstract
     private static function calc($string, $product)
     {
         $expression = self::buildExpression($string, $product);
-
+        
         eval('$result = '.$expression.';');
-        $result = number_format($result, 2, ',', '');
-
+        if(strpos($expression,'intval')!='0'){
+            $result = number_format($result, 2, ',', '');
+        }
         return $result;
     }
 
@@ -338,18 +351,18 @@ class Sitemaps_Model_Sitemap extends Mage_Core_Model_Abstract
                 $value = Mage::getUrl('', array('_secure' => false)).$product->getData('url_path');
             break;
 
-            case 'small_image':
-            case 'image':
-                try
-                {
-                    $value = $product->getImageUrl();
-                }
-                catch(Exception $e)
-                {
-                    $value = $product->getSmallImageUrl(200,200);
-                    continue;
-                }
-            break;
+//            case 'small_image':
+//            case 'image':
+//                try
+//                {
+//                    $value = $product->getImageUrl();
+//                }
+//                catch(Exception $e)
+//                {
+//                    $value = $product->getSmallImageUrl(200,200);
+//                    continue;
+//                }
+//            break;
 
             case 'stock':
                 $stock = (int)Mage::getModel('cataloginventory/stock_item')->loadByProduct($product)->getQty();
